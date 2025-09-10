@@ -1,4 +1,4 @@
-# Assignment 1 - OpenTK Graphics Project
+# Assignment 1 OpenGL Setup & First Render
 
 ## Overview
 This project is built using **OpenTK**, a low-level C# library for OpenGL, OpenAL, and OpenCL.  
