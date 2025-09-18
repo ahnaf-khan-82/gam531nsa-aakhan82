@@ -22,35 +22,5 @@ It covers fundamental 3D math operations, including vector addition, subtraction
 - Applying a matrix to a vector (`Vector3.TransformPosition`)
 
 ## Sample Output
-
-VECTOR OPERATIONS:
-
-v1 = (2, -1, 5)
-v2 = (-3, 4, 1)
-v1 + v2 = (-1, 3, 6)
-v1 - v2 = (5, -5, 4)
-Dot(v1, v2) = -5
-Cross(v1, v2) = (-21, -17, 5)
-
-MATRIX OPERATIONS:
-
-Identity Matrix:
-(1, 0, 0, 0)
-(0, 1, 0, 0)
-(0, 0, 1, 0)
-(0, 0, 0, 1)
-
-Scaling Matrix (3,1,2):
-(3, 0, 0, 0)
-(0, 1, 0, 0)
-(0, 0, 2, 0)
-(0, 0, 0, 1)
-
-Y-axis Rotation Matrix (60°):
-(0.5, 0, -0.866, 0)
-(0, 1, 0, 0)
-(0.866, 0, 0.5, 0)
-(0, 0, 0, 1)
-
-Scaled v1 = (6, -1, 10)
-Rotated v1 around Y-axis = (5.33, -1, 0.768)
+<img width="428" height="421" alt="image" src="https://github.com/user-attachments/assets/8aa2307b-82d4-4f62-8423-6acbf7cf90af" />
+It performs addition, subtraction, dot product, and cross product to show fundamental 3D vector calculations. Then, it creates an identity matrix, a scaling matrix, and a rotation matrix around the Y-axis, then applies these transformations to a sample vector.
