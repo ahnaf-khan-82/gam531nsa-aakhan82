@@ -1,11 +1,11 @@
 # Assignment 2: Vector & Matrix Operations
 
 ## Overview
-This project demonstrates basic vector and matrix operations using **OpenTK** in C#.  
-It covers fundamental 3D math operations, including vector addition, subtraction, dot product, cross product, and basic 4x4 matrix transformations (identity, scaling, rotation).
+This assignment demonstrates basic vector and matrix operations using **OpenTK** in C#.  
+It covers fundamental 3D math operations, including vector addition, subtraction, dot product, cross product, and matrix transformations (identity, scaling, rotation).
 
 ## Library Used
-**OpenTK.Mathematics** – for `Vector3`, `Vector4`, `Matrix4`, and math helper functions.
+**OpenTK.Mathematics** – for `Vector3`, `Vector4`, `Matrix4`
 
 ## Implemented Operations
 
