@@ -18,6 +18,6 @@ It builds upon earlier assignments by introducing 3D graphics concepts such as p
 - **Appearance**: Background is pink, cube is blue.
 
 ## Example Screenshot
-<img width="801" height="628" alt="image" src="https://github.com/user-attachments/assets/553e7d46-55d8-42bb-b7c5-75cb5525f534" />
-<img width="801" height="634" alt="image" src="https://github.com/user-attachments/assets/d04ea5fa-01e6-4cb1-9c13-f389636516da" />
+<img width="798" height="601" alt="image" src="https://github.com/user-attachments/assets/e7954ad7-64d6-4818-a8be-a19caa595294" />
+
 
