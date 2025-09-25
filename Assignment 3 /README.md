@@ -17,5 +17,5 @@ It builds upon earlier assignments by introducing 3D graphics concepts such as p
 - **Depth Test**: Enabled to correctly render overlapping cube faces.  
 - **Appearance**: Background is pink, cube is blue.
 
-## Example Screenshot*
+## Example Screenshot:
 <img width="802" height="632" alt="image" src="https://github.com/user-attachments/assets/6af39d21-301e-4ea4-a5bd-ced6c01faff9" />
