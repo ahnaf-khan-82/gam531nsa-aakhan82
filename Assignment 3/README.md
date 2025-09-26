@@ -14,8 +14,6 @@ It builds upon earlier assignments by introducing 3D graphics concepts such as p
   - **Model Matrix** – Rotates the cube continuously on the Y-axis.  
   - **View Matrix** – Translates the camera back along the Z-axis.  
   - **Projection Matrix** – Applies perspective projection so the cube appears in 3D.  
-- **Depth Test**: Enabled to correctly render overlapping cube faces.  
-- **Appearance**: Background is pink, cube is blue.
 
 ## Example Screenshot
 <img width="798" height="601" alt="image" src="https://github.com/user-attachments/assets/e7954ad7-64d6-4818-a8be-a19caa595294" />
