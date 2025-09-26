@@ -5,7 +5,7 @@ This assignment demonstrates rendering a basic 3D object (a cube) using OpenTK i
 It builds upon earlier assignments by introducing 3D graphics concepts such as perspective projection, transformations, and depth rendering.
 
 ## Library Used
-**OpenTK** – Windowing, Graphics.OpenGL4, Mathematics
+**OpenTK** – (Windowing, Graphics.OpenGL4, Mathematics)
 
 ## Implementation Details
 - **Cube Geometry**: Defined using 8 unique vertices and indexed with an element buffer (EBO) to create 12 triangles (6 faces).  
