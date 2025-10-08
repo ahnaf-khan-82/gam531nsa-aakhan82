@@ -22,7 +22,6 @@ It covers fundamental 3D math operations, including vector addition, subtraction
 - Applying a matrix to a vector (`Vector3.TransformPosition`)
 
 ## Sample Output
-<img width="441" height="501" alt="image" src="https://github.com/user-attachments/assets/9e483457-94f0-42dd-a617-ba4151a6d30d" />
+<img width="963" height="752" alt="image" src="https://github.com/user-attachments/assets/e04d0d80-a61a-42d3-9777-60b61710e7c8" />
+<img width="960" height="750" alt="image" src="https://github.com/user-attachments/assets/c70c9d81-7de6-4521-83cb-ed36f07e10ae" />
 
-
-It performs addition, subtraction, dot product, and cross product to show fundamental 3D vector calculations. Then, it creates an identity matrix, a scaling matrix, and a rotation matrix around the Y-axis, then applies these transformations to a sample vector.
