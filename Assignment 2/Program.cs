@@ -1,53 +1,161 @@
-﻿using System;
+using System;
+using OpenTK.Graphics.OpenGL4;
 using OpenTK.Mathematics;
+using OpenTK.Windowing.Common;
+using OpenTK.Windowing.Desktop;
+using OpenTK.Windowing.GraphicsLibraryFramework;
 
-class Program
+namespace WindowOpenTK
 {
-    static void Main()
+    internal static class Program
     {
-        Console.WriteLine("VECTOR OPERATIONS:\n");
-
-        Vector3 v1 = new Vector3(2, -1, 5);
-        Vector3 v2 = new Vector3(-3, 4, 1);
-
-        Console.WriteLine($"v1 = {v1}");
-        Console.WriteLine($"v2 = {v2}");
-
-        Vector3 add = v1 + v2;
-        Vector3 sub = v1 - v2;
-
-        float dot = Vector3.Dot(v1, v2);
-
-        Vector3 cross = Vector3.Cross(v1, v2);
-
-        Console.WriteLine($"v1 + v2 = {add}");
-        Console.WriteLine($"v1 - v2 = {sub}");
-        Console.WriteLine($"Dot(v1, v2) = {dot}");
-        Console.WriteLine($"Cross(v1, v2) = {cross}");
-        Console.WriteLine("\nMATRIX OPERATIONS:\n");
-
-        Matrix4 identity = Matrix4.Identity;
-        Matrix4 scale = Matrix4.CreateScale(3.0f, 1.0f, 2.0f);
-        Matrix4 rotationY = Matrix4.CreateRotationY(MathHelper.DegreesToRadians(60));
-        Console.WriteLine("Identity Matrix:");
-        PrintMatrix(identity);
-        Console.WriteLine("\nScaling Matrix (3,1,2):");
-        PrintMatrix(scale);
-        Console.WriteLine("\nY-axis Rotation Matrix (60°):");
-        PrintMatrix(rotationY);
-
-        Vector3 scaledVector = Vector3.TransformPosition(v1, scale);
-        Vector3 rotatedVector = Vector3.TransformPosition(v1, rotationY);
-
-        Console.WriteLine($"\nScaled v1 = {scaledVector}");
-        Console.WriteLine($"Rotated v1 around Y-axis = {rotatedVector}");
+        static void Main(string[] args)
+        {
+            using var game = new Game();
+            game.Run();
+        }
     }
 
-    static void PrintMatrix(Matrix4 m)
+    public sealed class Game : GameWindow
     {
-        Console.WriteLine($"({m.M11}, {m.M12}, {m.M13}, {m.M14})");
-        Console.WriteLine($"({m.M21}, {m.M22}, {m.M23}, {m.M24})");
-        Console.WriteLine($"({m.M31}, {m.M32}, {m.M33}, {m.M34})");
-        Console.WriteLine($"({m.M41}, {m.M42}, {m.M43}, {m.M44})");
+
+        private int _vao, _vbo, _program;
+        private int _uModel, _uView, _uProj, _uColor;
+
+        private float _t;
+
+        private static readonly float[] Vert = {
+            -0.25f,  0.60f, 0f,  
+            -0.25f, -0.60f, 0f,   
+             0.25f,  0.60f, 0f,  
+             0.25f, -0.60f, 0f  
+        };
+
+        public Game()
+        : base(GameWindowSettings.Default, new NativeWindowSettings
+        {
+            Title = "Assignment 2",
+            Size = new Vector2i(960, 720)
+        })
+        { }
+
+        protected override void OnLoad()
+        {
+            base.OnLoad();
+
+            GL.ClearColor(1.0f, 182f / 255f, 193f / 255f, 1.0f);
+            GL.Enable(EnableCap.DepthTest);
+
+            _program = CreateProgram(
+                @"#version 330 core
+                  layout(location=0) in vec3 aPos;
+                  uniform mat4 uModel, uView, uProj;
+                  void main() {
+                    gl_Position = uProj * uView * uModel * vec4(aPos, 1.0);
+                  }",
+                @"#version 330 core
+                  uniform vec4 uColor;
+                  out vec4 FragColor;
+                  void main() { FragColor = uColor; }"
+            );
+
+            _uModel = GL.GetUniformLocation(_program, "uModel");
+            _uView = GL.GetUniformLocation(_program, "uView");
+            _uProj = GL.GetUniformLocation(_program, "uProj");
+            _uColor = GL.GetUniformLocation(_program, "uColor");
+
+            _vao = GL.GenVertexArray();
+            _vbo = GL.GenBuffer();
+
+            GL.BindVertexArray(_vao);
+            GL.BindBuffer(BufferTarget.ArrayBuffer, _vbo);
+            GL.BufferData(BufferTarget.ArrayBuffer, Vert.Length * sizeof(float), Vert, BufferUsageHint.StaticDraw);
+
+            GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 3 * sizeof(float), 0);
+            GL.EnableVertexAttribArray(0);
+
+            GL.BindVertexArray(0);
+            GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
+        }
+
+        protected override void OnResize(ResizeEventArgs e)
+        {
+            base.OnResize(e);
+            GL.Viewport(0, 0, e.Width, e.Height);
+        }
+
+        protected override void OnUpdateFrame(FrameEventArgs args)
+        {
+            base.OnUpdateFrame(args);
+            if (KeyboardState.IsKeyDown(Keys.Escape)) Close();
+            _t += (float)args.Time;
+        }
+
+        protected override void OnRenderFrame(FrameEventArgs args)
+        {
+            base.OnRenderFrame(args);
+            GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+
+            GL.UseProgram(_program);
+            GL.BindVertexArray(_vao);
+
+
+            GL.Uniform4(_uColor, new Vector4(0f, 0f, 1f, 1f));
+
+
+            float aspect = Size.X / (float)Size.Y;
+            Matrix4 view = Matrix4.LookAt(new Vector3(0, 0, 3), Vector3.Zero, Vector3.UnitY);
+            Matrix4 proj = Matrix4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(60f), aspect, 0.1f, 100f);
+            GL.UniformMatrix4(_uView, false, ref view);
+            GL.UniformMatrix4(_uProj, false, ref proj);
+
+
+            float angle = MathHelper.DegreesToRadians(90f) * _t;                
+            float scale = 1.0f + 0.20f * MathF.Sin(MathF.Tau * 1.0f * _t);    
+            Matrix4 model = Matrix4.CreateScale(scale) * Matrix4.CreateRotationY(angle);
+
+            GL.UniformMatrix4(_uModel, false, ref model);
+
+
+            GL.DrawArrays(PrimitiveType.TriangleStrip, 0, 4);
+
+            GL.BindVertexArray(0);
+            SwapBuffers();
+        }
+
+        protected override void OnUnload()
+        {
+            base.OnUnload();
+            if (_vbo != 0) GL.DeleteBuffer(_vbo);
+            if (_vao != 0) GL.DeleteVertexArray(_vao);
+            if (_program != 0) GL.DeleteProgram(_program);
+        }
+
+        private static int CreateProgram(string vsSrc, string fsSrc)
+        {
+            int vs = GL.CreateShader(ShaderType.VertexShader);
+            GL.ShaderSource(vs, vsSrc);
+            GL.CompileShader(vs);
+            GL.GetShader(vs, ShaderParameter.CompileStatus, out var okV);
+            if (okV == 0) throw new Exception("Vertex shader: " + GL.GetShaderInfoLog(vs));
+
+            int fs = GL.CreateShader(ShaderType.FragmentShader);
+            GL.ShaderSource(fs, fsSrc);
+            GL.CompileShader(fs);
+            GL.GetShader(fs, ShaderParameter.CompileStatus, out var okF);
+            if (okF == 0) throw new Exception("Fragment shader: " + GL.GetShaderInfoLog(fs));
+
+            int prog = GL.CreateProgram();
+            GL.AttachShader(prog, vs);
+            GL.AttachShader(prog, fs);
+            GL.LinkProgram(prog);
+            GL.GetProgram(prog, GetProgramParameterName.LinkStatus, out var okP);
+            GL.DetachShader(prog, vs);
+            GL.DetachShader(prog, fs);
+            GL.DeleteShader(vs);
+            GL.DeleteShader(fs);
+            if (okP == 0) throw new Exception("Program link: " + GL.GetProgramInfoLog(prog));
+            return prog;
+        }
     }
 }
