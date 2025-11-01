@@ -1,4 +1,3 @@
-# Space Pod - Midterm 3D Explorer
 # Space Pod - Solar System
 
 ## Project Description
