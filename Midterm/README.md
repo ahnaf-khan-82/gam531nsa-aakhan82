@@ -1,4 +1,4 @@
-# Space Pod - Midterm 3D Explorer
+# Space Pod - Solar System
 
 ## Project Description
 Space Pod is an interactive 3D scene built in C# with OpenTK.  
