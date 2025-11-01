@@ -70,7 +70,7 @@ This project demonstrates topics from Weeks 1–6:
 
 All textures are royalty-free for educational / noncommercial use, or are public domain:
 
-- **Sun, Mercury, Mars, Jupiter, Pluto**
+# **Sun, Mercury, Mars, Jupiter, Pluto**
 - SUN: https://commons.wikimedia.org/wiki/File%3AMap_of_the_full_sun.jpg?utm_source=chatgpt.com
 - MERCURY: https://astrogeology.usgs.gov/search/map/mercury_messenger_mdis_basemap_enhanced_color_global_mosaic_665
 - MARS: https://astrogeology.usgs.gov/ckan/dataset/7131d503-cdc9-45a5-8f83-5126c0fd397e/resource/6afad901-1caa-48a7-8b62-3911da0004c2/download/mars_viking_mdim21_clrmosaic_global_1024.jpg
@@ -78,21 +78,21 @@ All textures are royalty-free for educational / noncommercial use, or are public
 - PLUTO: https://astrogeology.usgs.gov/search/map/pluto_new_horizons_lorri_mvic_global_dem_300
   NASA / JPL / USGS planetary maps and mosaics. These are U.S. government science products that are released as public domain.
 
-- **Earth Day Map**
+# **Earth Day Map**
 - https://commons.wikimedia.org/wiki/File%3ASolarsystemscope_texture_8k_earth_daymap.jpg
   "solarsystemscope_texture_8k_earth_daymap.jpg" by Solar System Scope / inove.  
 
-- **Moon Map**
+# **Moon Map**
 - https://commons.wikimedia.org/wiki/File:Solarsystemscope_texture_8k_moon.jpg
   "solarsystemscope_texture_8k_moon.jpg" by Solar System Scope / inove.  
 
 
-- **Venus**
+# **Venus**
 - https://upload.wikimedia.org/wikipedia/commons/1/19/Cylindrical_Map_of_Venus.jpg
   Cylindrical Venus surface map derived from NASA / JPL radar data.  
   Shared on Wikimedia Commons for educational reuse.
 
-- **Saturn, Uranus, Neptune**
+# **Saturn, Uranus, Neptune**
 - SATURN: https://bjj.mmedia.is/data/saturn/index.html
 - URANUS: https://www.planetary.org/space-images/cylindrical-map-of-uranus-from-voyager-2-data
 - NEPTUNE: https://bjj.mmedia.is/data/neptune/index.html
