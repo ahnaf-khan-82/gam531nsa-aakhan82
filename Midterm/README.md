@@ -100,7 +100,7 @@ All textures are royalty-free for educational / noncommercial use, or are public
   Allowed for educational / noncommercial use when credit is given.  
   (Credit: NASA / JPL / Cassini / Voyager 2 / Björn Jónsson)
 
-- **Milky Way Background / Space Sky**
+# **Milky Way Background / Space Sky**
 - https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/ESO_-_Milky_Way.jpg/960px-ESO_-_Milky_Way.jpg?20121015100932
   ESO (European Southern Observatory) Milky Way panorama, published for free reuse with attribution to ESO and the listed astrophotographers.
 
