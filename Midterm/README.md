@@ -78,11 +78,11 @@ All textures are royalty-free for educational / noncommercial use, or are public
 - PLUTO: https://astrogeology.usgs.gov/search/map/pluto_new_horizons_lorri_mvic_global_dem_300
   NASA / JPL / USGS planetary maps and mosaics. These are U.S. government science products that are released as public domain.
 
-# **Earth Day Map**
+# **Earth**
 - https://commons.wikimedia.org/wiki/File%3ASolarsystemscope_texture_8k_earth_daymap.jpg
   "solarsystemscope_texture_8k_earth_daymap.jpg" by Solar System Scope / inove.  
 
-# **Moon Map**
+# **Moon**
 - https://commons.wikimedia.org/wiki/File:Solarsystemscope_texture_8k_moon.jpg
   "solarsystemscope_texture_8k_moon.jpg" by Solar System Scope / inove.  
 
