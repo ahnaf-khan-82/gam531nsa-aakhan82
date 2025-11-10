@@ -1,8 +1,5 @@
 # Sprite Animation Project (Advanced Sprite Animation in OpenTK)
 
-**Course:** WEB422 / Computer Programming & Analysis  
-**Assignment:** Advanced Sprite Animation in OpenTK (C# + OpenGL)  
-
 ---
 
 ## Overview
@@ -13,13 +10,13 @@ This project adds to the the original SpriteGameOpenTk example by introducing sm
 
 ## Features
 
-- New Movement Mechanics – Added running (Shift + left or right arrow / A–D keys) and jumping (Space / up arrow) with gravity-based motion.
-- State Machine Control – Smooth transitions between Idle, Walk, Run, and Jump states for consistent animation flow.
-- Sound Integration – Distinct sound effects for walking, running, and jumping, synced with their actions.
-- Directional Facing – Character automatically flips horizontally based on input direction.
+- Movement Mechanics – Added running (Shift + left or right arrow / A–D keys) and jumping (Space / up arrow) with gravity-based motion.
+- State Control – Smooth transitions between Idle, Walk, Run, and Jump states for consistent animation flow.
+- Sound – Sound effects for walking, running, and jumping which is synced with the actions.
+- Directional Facing – Character automatically flips horizontally based on input direction (left or right).
 - Physics – Vertical velocity and gravity
-- Optimized Rendering – Uses VAO/VBO structure, OpenGL blending, and uniform matrices for 2D rendering.
-- Idle Animation Loop – Subtle breathing motion during inactivity.
+- Rendering – Uses VAO/VBO structure, OpenGL blending and uniform matrices for 2D rendering.
+- Idle Animation – Subtle breathing motion during inactivity.
   
 ---
 
@@ -47,8 +44,8 @@ The animation controller uses a state machine that determines which animation an
 | **Run** | Triggered by Shift + movement, plays faster looping animation. |
 | **Jump** | Activated by pressing Space or Up, applies upward velocity and gravity. |
 
-Each state manages frame timing, looping, and sound playback independently.  
-Transitions are restricted logically (e.g., jumping only when grounded).
+Each state manages frame timing, looping and sound playback independently.  
+Transitions are restricted logically (being able to jump only when on ground).
 
 ---
 
@@ -87,11 +84,14 @@ All sounds are synchronized with their corresponding animation states.
 
 All sound effects are free for use under the [Pixabay Content License](https://pixabay.com/service/license-summary/).
 
-| Sound | Title | Author | Source |
-|--------|--------|---------|---------|
-| Jump | Cartoon Jump | Bastianhallo (Freesound) | [https://pixabay.com/sound-effects/cartoon-jump-6462/](https://pixabay.com/sound-effects/cartoon-jump-6462/) |
-| Run | Running 1 | vmgraw (Freesound) | [https://pixabay.com/sound-effects/running-1-6846/](https://pixabay.com/sound-effects/running-1-6846/) |
-| Walk | Walking | wolfdoctor (Freesound) | [https://pixabay.com/sound-effects/walking-96582/](https://pixabay.com/sound-effects/walking-96582/) |
+- Jump Sound: “Cartoon Jump” by Bastianhallo
+https://pixabay.com/sound-effects/cartoon-jump-6462/
+
+- Running Sound: “Running 1” by vmgraw
+https://pixabay.com/sound-effects/running-1-6846/
+
+- Walking Sound: “Walking” by wolfdoctor
+https://pixabay.com/sound-effects/walking-96582/
 
 ---
 
