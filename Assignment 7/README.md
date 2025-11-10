@@ -13,20 +13,14 @@ This project adds to the the original SpriteGameOpenTk example by introducing sm
 
 ## Features
 
-New Movement Mechanics – Added running (Shift + arrow/A–D keys) and jumping with gravity-based motion.
-
-State Machine Control – Smooth transitions between Idle, Walk, Run, and Jump states for consistent animation flow.
-
-Sound Integration – Distinct sound effects for walking, running, and jumping, synced with their respective animations.
-
-Directional Facing – Character automatically flips horizontally based on input direction.
-
-Physics Simulation – Vertical velocity and ground detection create realistic jump arcs and landings.
-
-Optimized Rendering – Uses VAO/VBO structure, OpenGL blending, and uniform matrices for efficient 2D rendering.
-
-Idle Animation Loop – Subtle breathing motion during inactivity for a more natural appearance.
-
+- New Movement Mechanics – Added running (Shift + left or right arrow / A–D keys) and jumping (Space / up arrow) with gravity-based motion.
+- State Machine Control – Smooth transitions between Idle, Walk, Run, and Jump states for consistent animation flow.
+- Sound Integration – Distinct sound effects for walking, running, and jumping, synced with their actions.
+- Directional Facing – Character automatically flips horizontally based on input direction.
+- Physics – Vertical velocity and gravity
+- Optimized Rendering – Uses VAO/VBO structure, OpenGL blending, and uniform matrices for 2D rendering.
+- Idle Animation Loop – Subtle breathing motion during inactivity.
+  
 ---
 
 ## Controls
@@ -44,7 +38,7 @@ Idle Animation Loop – Subtle breathing motion during inactivity for a more nat
 
 ## State Machine Logic
 
-The animation controller uses a **finite state machine** that determines which animation and sound to play based on input and character state.
+The animation controller uses a state machine that determines which animation and sound to play based on input and character state.
 
 | State | Description |
 |--------|-------------|
@@ -72,8 +66,11 @@ All sounds are synchronized with their corresponding animation states.
 
 ## Challenges Faced
 
-
-
+- Had to adjust frame time for smoother transitions between animation states. 
+- Delay in sound which I fixed by preloading sounds.
+- Issue with frame allignment but made sure that the sprite aspect ratio was consistent.
+- Idle animation was initially frozen but I solved it by using a loop.
+  
 ---
 
 ## Assets & Credits
@@ -85,8 +82,6 @@ All sounds are synchronized with their corresponding animation states.
 - **Source:** [https://craftpix.net/freebies/free-shinobi-sprites-pixel-art/](https://craftpix.net/freebies/free-shinobi-sprites-pixel-art/)  
 - **License:** Royalty-free for personal and commercial use under the CraftPix Free Assets License.  
 © CraftPix.net – used under the free license.
-
----
 
 ### Sound Effects
 
