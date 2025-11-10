@@ -2,31 +2,30 @@
 
 **Course:** WEB422 / Computer Programming & Analysis  
 **Assignment:** Advanced Sprite Animation in OpenTK (C# + OpenGL)  
-**Due Date:** November 9, 2025  
-**Developed by:** Ahnaf Abrar Khan  
-**Institution:** Seneca Polytechnic  
 
 ---
 
 ## Overview
 
-This project builds upon the base [SpriteGameOpenTk](https://github.com/mouraleonardo/SpriteGameOpenTk) example by introducing new mechanics such as **jumping**, **running**, and **idle animations**, along with integrated **sound effects**.
-
-It features a full **state machine** that smoothly transitions between **Idle**, **Walk**, **Run**, and **Jump** states, achieving lifelike character motion through OpenGL transformations and input-driven control.
-
-The final result is a polished and responsive 2D sprite system combining animation, physics, and sound for a dynamic gameplay experience.
+This project adds to the the original SpriteGameOpenTk example by introducing smoother, more lifelike character movement by using new run and jump mechanics with realistic gravity. It has a complete state machine that controls when the character idles, walks, runs, or jumps along with synchronized sound effects for each action. Using OpenTK and OpenGL, the game renders 2D animations, with physics and input control to create a better experience.
 
 ---
 
 ## Features
 
-- Idle, Walk, Run, and Jump animations with correct frame timing.  
-- Gravity and jump simulation using vertical velocity and ground detection.  
-- Shift key sprint mechanic for faster running speed and animation rate.  
-- Sound effects synchronized with player movement.  
-- Directional facing (sprite flips horizontally when changing direction).  
-- Organized state machine for seamless transitions.  
-- Optimized rendering with OpenGL blending and VAO/VBO usage.
+New Movement Mechanics – Added running (Shift + arrow/A–D keys) and jumping with gravity-based motion.
+
+State Machine Control – Smooth transitions between Idle, Walk, Run, and Jump states for consistent animation flow.
+
+Sound Integration – Distinct sound effects for walking, running, and jumping, synced with their respective animations.
+
+Directional Facing – Character automatically flips horizontally based on input direction.
+
+Physics Simulation – Vertical velocity and ground detection create realistic jump arcs and landings.
+
+Optimized Rendering – Uses VAO/VBO structure, OpenGL blending, and uniform matrices for efficient 2D rendering.
+
+Idle Animation Loop – Subtle breathing motion during inactivity for a more natural appearance.
 
 ---
 
@@ -61,8 +60,6 @@ Transitions are restricted logically (e.g., jumping only when grounded).
 
 ## Sound Implementation
 
-Sound effects are loaded with `System.Media.SoundPlayer` and preloaded in `OnLoad()` for lag-free playback.
-
 | Sound | Trigger | Behavior |
 |--------|----------|-----------|
 | **Walk.wav** | When walking | Loops continuously |
@@ -75,10 +72,7 @@ All sounds are synchronized with their corresponding animation states.
 
 ## Challenges Faced
 
-- **Timing Optimization** – Balancing frame speed for smoother transitions.  
-- **Sound Lag Fix** – Solved by preloading WAVs before playback.  
-- **Frame Alignment** – Adjusted UV coordinates for proper left/right flipping.  
-- **Idle Animation** – Added looping subtle motion for realism.
+
 
 ---
 
