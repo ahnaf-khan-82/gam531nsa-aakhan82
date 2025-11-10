@@ -5,7 +5,7 @@
 
 ## Overview
 
-This project adds to the the original SpriteGameOpenTk example by introducing smoother, more lifelike character movement by using new run and jump mechanics with realistic gravity. It has a complete state machine that controls when the character idles, walks, runs, or jumps along with synchronized sound effects for each action. Using OpenTK and OpenGL, the game renders 2D animations, with physics and input control to create a better experience.
+This assignment adds to the original SpriteGameOpenTk example given by our professor by introducing smoother, more lifelike character movement by using new run and jump mechanics with gravity. It has a complete state machine that controls when the character idles, walks, runs, or jumps along with synchronized sound effects for each action. Using OpenTK and OpenGL, the game renders 2D animations along with physics and input control.
 
 ---
 
