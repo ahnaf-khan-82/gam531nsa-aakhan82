@@ -111,29 +111,3 @@ All sound effects are free for use under the [Pixabay Content License](https://p
 All visual and audio assets are used under their respective royalty-free or Pixabay licenses.  
 Proper credit is provided to acknowledge original creators and comply with attribution requirements.
 
----
-
-## Deliverables
-
-- Full project folder including `.csproj`, source files, and assets.  
-- `README.md` (this document).  
-- Compressed `.zip` submission.
-
----
-
-## Grading Rubric (5 pts)
-
-| Criteria | Description | Points |
-|-----------|--------------|---------|
-| **Functionality** | New movement mechanics work correctly and respond to input. | 2.0 |
-| **Animation Logic** | State transitions and frame handling are consistent and bug-free. | 1.5 |
-| **Code Quality** | Clean structure, readable comments, and efficient logic. | 1.0 |
-| **Creativity & Polish** | Smoothness, sound sync, and visual appeal. | 0.5 |
-
-**Total:** 5.0 / 5 pts possible
-
----
-
-## Developer Info
-
-**Developed by:** Ahnaf Abrar Khan  
