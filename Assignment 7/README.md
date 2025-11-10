@@ -72,7 +72,7 @@ All sounds are synchronized with their corresponding animation states.
 
 ## Assets & Credits
 
-### Character Sprites
+### Character
 
 - **Title:** Free Shinobi Sprites Pixel Art  
 - **Author:** CraftPix.net  
