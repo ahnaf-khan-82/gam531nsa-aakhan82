@@ -1,4 +1,5 @@
-# Sprite Animation Project (Advanced Sprite Animation in OpenTK)
+# Assignment 7 - Advanced Sprite Animation in OpenTK (C# + OpenGL)
+- Name: Ahnaf Abrar Khan (ID:150641223, aakhan82)
 
 ---
 
